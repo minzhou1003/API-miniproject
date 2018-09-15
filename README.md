@@ -14,10 +14,10 @@ Build a library (preferable in python) that downloads images from a twitter feed
 ## Sprint 1:
 - [x] Study the general functions of all APIs
 - [x] Define the function of each module
-- [ ] Implement a shell for the module
+- [x] Implement a shell for the module
 
 ## Sprint 2:
-- [ ] Implement the twitter module
+- [x] Implement the twitter module
 
 ## Sprint 3:
 - [x] Implement the FFMPEG module
@@ -27,3 +27,4 @@ Build a library (preferable in python) that downloads images from a twitter feed
 
 ## Test
 - [x] Test the FFMPEG module
+- [x] Test the twitter module
