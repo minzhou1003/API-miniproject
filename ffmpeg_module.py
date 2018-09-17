@@ -20,5 +20,5 @@ def image_to_video(video_name):
     os.chdir(current_path + '/images')
     print('images:')
     print(subprocess.check_output(['ls']))
-    subprocess.call(['ffmpeg', '-framerate', '0.5', '-i', 'image%03d.jpg', video_name])
+    subprocess.call(['ffmpeg', '-framerate', '1', '-i', 'image%03d.jpg', video_name])
     print('Video successfully saved.')
