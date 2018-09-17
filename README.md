@@ -23,8 +23,9 @@ Build a library (preferable in python) that downloads images from a twitter feed
 - [x] Implement the FFMPEG module
 
 ## Sprint 4:
-- [ ] Implement the Vision module
+- [x] Implement the Vision module
 
 ## Test
 - [x] Test the FFMPEG module
 - [x] Test the twitter module
+- [x] Test the google-vision module
