@@ -40,6 +40,7 @@ def main():
     detect_image_labels(current_path + '/images')
 
     # convert to video using ffmpeg
+    print('\nConverting to video...')
     image_folder_path = current_path + '/images'
     video_name = 'result.mp4'
     image_to_video(video_name, image_folder_path)
