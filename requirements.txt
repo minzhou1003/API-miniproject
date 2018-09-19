@@ -1,0 +1,10 @@
+argparse
+tweepy
+wget
+subprocess
+pathlib
+pillow
+google-cloud-storage
+google-cloud-videointelligence
+google-cloud-vision
+google
