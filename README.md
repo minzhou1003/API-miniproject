@@ -2,6 +2,7 @@
 This is the mini project from EC601.
 
 Author: Min Zhou
+
 Email: minzhou@bu.edu
 
 ## Description:
