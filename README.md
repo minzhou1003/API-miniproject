@@ -3,6 +3,8 @@ This is the mini project from EC601.
 
 Author: Min Zhou
 
+Email: minzhou@bu.edu
+
 ## Description:
 This a python library that downloads images from a twitter feed, convert them to a video and describe the content of the images in the video, and it also can output the label of the video.
 
@@ -73,7 +75,9 @@ _You will be asked to enter your Twitter API credential_.
 
 ## Test code result: 
 
-Images from [@NatGeoPhotos](https://twitter.com/NatGeoPhotos)
+Tweet images from [@NatGeoPhotos](https://twitter.com/NatGeoPhotos)
+
+Click on the image to see the video on YouTube:
 
 [![](https://img.youtube.com/vi/7jhDZyZXr1I/0.jpg)](https://www.youtube.com/watch?v=7jhDZyZXr1I)
 
