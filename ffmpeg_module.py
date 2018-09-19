@@ -12,13 +12,12 @@ import subprocess
 import os
 
 
-def image_to_video(video_name):
+def image_to_video(video_name, image_folder_path):
     """
     convert a set of images to video
+    @param: video_name is a string of video file, ex: 'result.mp4'
+    @param: image_folder_path is the path of the images folder
     """
-    current_path = os.getcwd()
-    os.chdir(current_path + '/images')
-    print('images:')
-    print(subprocess.check_output(['ls']))
+    os.chdir(image_folder_path)
     subprocess.call(['ffmpeg', '-framerate', '1', '-i', 'image%03d.jpg', video_name])
-    print('Video successfully saved.')
+    print(f'\nVideo successfully saved as {video_name}.')

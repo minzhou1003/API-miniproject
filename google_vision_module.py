@@ -8,14 +8,16 @@ __email__ = 'minzhou@bu.edu'
 This is the google vision module for analyzing labels of video.
 """
 
-import argparse
-import os
 from google.cloud import videointelligence
+from google.cloud import vision
+from google.cloud.vision import types
+from pathlib import Path
+from PIL import Image, ImageDraw, ImageFont
 
+import os
 
-def analyze_labels(path):
+def analyze_video_labels(path):
     """ Detects labels given a GCS path. """
-    # [START video_label_tutorial_construct_request]
     video_client = videointelligence.VideoIntelligenceServiceClient()
     features = [videointelligence.enums.Feature.LABEL_DETECTION]
 
@@ -23,15 +25,8 @@ def analyze_labels(path):
         input_content = movie.read()
     operation = video_client.annotate_video(features=features, input_content=input_content)
 
-    # [END video_label_tutorial_construct_request]
     print('\nProcessing video for label annotations:')
-
-    # [START video_label_tutorial_check_operation]
     result = operation.result(timeout=90)
-    print('\nFinished processing.')
-    # [END video_label_tutorial_check_operation]
-
-    # [START video_label_tutorial_parse_response]
     segment_labels = result.annotation_results[0].segment_label_annotations
     for i, segment_label in enumerate(segment_labels):
         print('Video label description: {}'.format(
@@ -47,6 +42,54 @@ def analyze_labels(path):
                         segment.segment.end_time_offset.nanos / 1e9)
             positions = '{}s to {}s'.format(start_time, end_time)
             confidence = segment.confidence
-            print('\tSegment {}: {}'.format(i, positions))
+
+            # print('\tSegment {}: {}'.format(i, positions))
             print('\tConfidence: {}'.format(confidence))
         print('\n')
+
+
+def detect_image_labels(directory_in_str):
+    """Detects labels in the file."""
+    client = vision.ImageAnnotatorClient()
+
+    pathlist = Path(directory_in_str).glob('**/*.jpg')
+    for path in pathlist:
+        # because path is object not string
+        path_in_str = str(path)
+
+        with open(path, 'rb') as image_file:
+            content = image_file.read()
+
+        image = vision.types.Image(content=content)
+        response = client.label_detection(image=image)
+        labels = response.label_annotations
+
+        score = labels[0].score
+        description = labels[0].description
+
+        message = f'Highest score: {score:.2}, Description: {description}'
+        print(message)
+        add_label_to_image(path_in_str, message)
+    print('\nFinished analysis!')
+
+def add_label_to_image(path, message):
+    image = Image.open(path)
+    draw = ImageDraw.Draw(image)
+
+    # create font object with the font file and specify
+    # desired size
+    try:
+        font = ImageFont.truetype('Arial.ttf', size=25)
+    except:
+        print('Please check the font. Default is "Arial.ttf" in MAC OS.')
+        sys.exit(1)
+    # starting position of the message
+    (x, y) = (50, 50)
+    color = 'rgb(255, 0, 0)' # black color
+    
+    # draw the message on the background   
+    draw.text((x, y), message, fill=color, font=font)   
+    # save the edited image
+    image.save(path)
+
+

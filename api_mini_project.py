@@ -11,7 +11,7 @@ convert them to a video and describe the content of the images in the video.
 
 from ffmpeg_module import image_to_video
 from twitter_module import get_media_url_from_tweets, download_images
-from google_vision_module import analyze_labels
+from google_vision_module import analyze_video_labels, detect_image_labels
 
 import time
 import argparse
@@ -20,21 +20,34 @@ import os
 
 def main():
 
-    # download images
-    media_files = get_media_url_from_tweets("@BU_Tweets")
-    time.sleep(2)
-    download_images(media_files, len(media_files))
+    # download images from Twitter
+    print('Please enter your Twitter API credentials.')
+    try:
+        media_files = get_media_url_from_tweets("@NatGeoPhotos")
+    except:
+        print('\nTwitter API auth failed, please check your credentials.')
+    time.sleep(1)
+    try:
+        download_images(media_files)
+    except:
+        print('\nFailed to download images.')
+        sys.exit(1)
+    # analyze the label of the images and video
+    current_path = os.getcwd()
 
-    # convert to video
-    image_to_video('v.avi')
+    # Google vision API
+    print('\nImage label detection using Google vision API:')
+    detect_image_labels(current_path + '/images')
 
-    # analyze the label of the video
-    parser = argparse.ArgumentParser(description=__doc__, 
-        formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('path', help='GCS file path for label detection.')
-    args = parser.parse_args()
+    # convert to video using ffmpeg
+    image_folder_path = current_path + '/images'
+    video_name = 'result.mp4'
+    image_to_video(video_name, image_folder_path)
 
-    analyze_labels(args.path)
+    # Google video intelligence API
+    print('\nVideo label analysis using Google vision API:')
+    analyze_video_labels(current_path + '/images/result.mp4')
+
 
 if __name__ == '__main__':
     main()
