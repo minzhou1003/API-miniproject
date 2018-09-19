@@ -74,6 +74,11 @@ def download_images(media_files):
     download images from media urls and save to images folder
     @param: Set of image urls
     """
+
+    # create the images folder
+    if not os.path.exists('/images'):
+        os.makedirs('images')
+    
     downloaded = 1
     output_folder = 'images'
     for media_url in media_files:
