@@ -50,7 +50,6 @@ _Note: you should enable both Google Vision API and Google Intelligence Video AP
 export GOOGLE_APPLICATION_CREDENTIALS="/your/path/to/credential/json/file"
 ```
 
-
 ### 5. Run the test code:
 ```
 python api_mini_project.py
