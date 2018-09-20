@@ -26,7 +26,7 @@ This a python library that downloads images from a twitter feed, convert them to
 
     _Note: this project is only tested on MAC OS._
 
-### 1. Inside above test folder:
+### 1. Download this repository:
 ```
 git clone https://github.com/minzhou1003/API-miniproject.git
 ```
