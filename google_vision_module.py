@@ -78,11 +78,7 @@ def add_label_to_image(path, message):
 
     # create font object with the font file and specify
     # desired size
-    try:
-        font = ImageFont.truetype('Arial.ttf', size=25)
-    except:
-        print('Please check the font. Default is "Arial.ttf" in MAC OS.')
-        sys.exit(1)
+    font = ImageFont.truetype('arial.ttf', size=25)
     # starting position of the message
     (x, y) = (50, 50)
     color = 'rgb(255, 0, 0)' # black color
