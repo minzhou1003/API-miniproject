@@ -17,6 +17,7 @@ This a python library that downloads images from a twitter feed, convert them to
 - `images/ ` is the folder to store the images collected by Twitter API.
 - `api_mini_project.py` is the script to for this project.
 - `ffmpeg_module.py`, `twitter_module.py` and `google_vision_module.py` is neccessary first party libraries for this project.
+- `arial.ttf` is the font for labeling images.
 
 ## Installation:
 - python 3
