@@ -20,37 +20,41 @@ This a python library that downloads images from a twitter feed, convert them to
 
 ## Installation:
 - python 3
-- virtualenv
+- [virtualenv](https://cloud.google.com/python/setup)
 - Twitter API credential
-- [Google Vision API](https://cloud.google.com/vision/docs/), [Google Intelligence Video API](https://cloud.google.com/video-intelligence/docs/) credential JSON key.
+- [Google Vision API](https://cloud.google.com/vision/docs/), [Google Intelligence Video API](https://cloud.google.com/video-intelligence/docs/) credential *JSON* key.
 
     _Note: this project is only tested on MAC OS._
 
-1. Create a test folder and activate virtualenv inside that folder, check [this](https://cloud.google.com/python/setup).
-
-2. Inside above test folder:
+### 1. Inside above test folder:
 ```
 git clone https://github.com/minzhou1003/API-miniproject.git
 ```
 
-3. Go to API-miniproject folder:
+### 2. Set up and activate virtualenv inside that folder.
 ```
 cd API-miniproject
+virtualenv --python python3 env
+source env/bin/activate
+```
+
+### 3. Install python libraries:
+```
 pip install -r requirements.txt
 ```
 
-4. Put the Google API JSON key under this folder
+### 4. Put the Google API JSON key under this folder
 
-    _Note: you should enable both Google Vision API and Google Intelligence Video API._
+_Note: you should enable both Google Vision API and Google Intelligence Video API._
 
 
-5. Run the test code:
+### 5. Run the test code:
 ```
 python api_mini_project.py
 ```
 _You will be asked to enter your Twitter API credential_.
 
-6. After successfully run the code, you will get downloaded images with labels and a `result.mp4` video inside the `/images` folder.
+### 6. After successfully run the code, you will get downloaded images with labels and a `result.mp4` video inside the `/images` folder.
 
 
 ## Sprint 1:
