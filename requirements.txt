@@ -1,7 +1,6 @@
 argparse
 tweepy
 wget
-subprocess
 pathlib
 pillow
 google-cloud-storage
