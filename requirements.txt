@@ -3,7 +3,8 @@ tweepy
 wget
 pathlib
 pillow
+google
 google-cloud-storage
 google-cloud-videointelligence
 google-cloud-vision
-google
+
