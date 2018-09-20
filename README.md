@@ -46,6 +46,9 @@ pip install -r requirements.txt
 ### 4. Put the Google API JSON key under this folder
 
 _Note: you should enable both Google Vision API and Google Intelligence Video API._
+```
+export GOOGLE_APPLICATION_CREDENTIALS="/your/path/to/credential/json/file"
+```
 
 
 ### 5. Run the test code:
