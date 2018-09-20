@@ -16,6 +16,7 @@ from google_vision_module import analyze_video_labels, detect_image_labels
 import time
 import argparse
 import os
+import sys
 
 
 def main():
@@ -30,7 +31,7 @@ def main():
     try:
         download_images(media_files)
     except:
-        print('\nFailed to download images.')
+        print('\nFailed to download images, please delete the /images folder and try again.')
         sys.exit(1)
     # analyze the label of the images and video
     current_path = os.getcwd()
