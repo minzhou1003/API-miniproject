@@ -43,7 +43,7 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Put the Google API JSON key under this folder
+### 4. Put the Google API JSON key under this folder.
 
 _Note: you should enable both Google Vision API and Google Intelligence Video API._
 ```
@@ -57,7 +57,10 @@ python api_mini_project.py
 ```
 _You will be asked to enter your Twitter API credential_.
 
-### 6. After successfully run the code, you will get downloaded images with labels and a `result.mp4` video inside the `/images` folder.
+### 6. Output result:
+After successfully run the code, you will get downloaded images with labels and a `result.mp4` video inside the `/images` folder.
+
+_Note: the "Highest score" is the most confident label predicted by Google Vision API._
 
 
 ## Sprint 1:
