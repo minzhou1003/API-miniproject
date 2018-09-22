@@ -22,8 +22,8 @@ This a python library that downloads images from a twitter feed, convert them to
 ## Installation:
 - python 3
 - [virtualenv](https://cloud.google.com/python/setup)
-- Twitter API credential
-- [Google Vision API](https://cloud.google.com/vision/docs/), [Google Intelligence Video API](https://cloud.google.com/video-intelligence/docs/) credential *JSON* key.
+- Create a app using Twitter develper account, and get the Twitter API credential
+- Enable [Google Vision API](https://cloud.google.com/vision/docs/), [Google Intelligence Video API](https://cloud.google.com/video-intelligence/docs/), and get your JSON service account file.
 
     _Note: this project is only tested on MAC OS._
 
@@ -44,11 +44,11 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Put the Google API JSON key under this folder.
+### 4. Authenticate to Google API.
 
-_Note: you should enable both Google Vision API and Google Intelligence Video API._
+_Note: Before this step, you should enable both Google Vision API and Google Intelligence Video API to get the JSON credential first._
 ```
-export GOOGLE_APPLICATION_CREDENTIALS="/absolute/path/to/credential/json/file"
+export GOOGLE_APPLICATION_CREDENTIALS="/absolute/path/to/your/Google/credential/json/file"
 ```
 
 ### 5. Run the test code:
