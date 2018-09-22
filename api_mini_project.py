@@ -38,17 +38,25 @@ def main():
 
     # Google vision API
     print('\nImage label detection using Google vision API:')
-    detect_image_labels(current_path + '/images')
+    try:
+        detect_image_labels(current_path + '/images')
+    except:
+        print('Google viison API failed, please export the JSON file and try agian.')
 
     # convert to video using ffmpeg
     print('\nConverting to video...')
     image_folder_path = current_path + '/images'
     video_name = 'result.mp4'
-    image_to_video(video_name, image_folder_path)
-
+    try:
+        image_to_video(video_name, image_folder_path)
+    except:
+        print('Failed to convert to video, please try again.')
     # Google video intelligence API
     print('\nVideo label analysis using Google vision API:')
-    analyze_video_labels(current_path + '/images/result.mp4')
+    try:
+        analyze_video_labels(current_path + '/images/result.mp4')
+    except:
+        print('Google video intelligence API failed, please export the JSON file and try agian.')
 
 
 if __name__ == '__main__':
