@@ -41,7 +41,7 @@ def main():
     try:
         detect_image_labels(current_path + '/images')
     except:
-        print('Google viison API failed, please export the JSON file and try agian.')
+        print('Google vision API failed, please export the JSON file and try again.')
 
     # convert to video using ffmpeg
     print('\nConverting to video...')
@@ -56,7 +56,7 @@ def main():
     try:
         analyze_video_labels(current_path + '/images/result.mp4')
     except:
-        print('Google video intelligence API failed, please export the JSON file and try agian.')
+        print('Google video intelligence API failed, please export the JSON file and try again.')
 
 
 if __name__ == '__main__':
