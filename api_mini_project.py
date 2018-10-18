@@ -24,7 +24,8 @@ def main():
     # download images from Twitter
     print('Please enter your Twitter API credentials.')
     try:
-        media_files = get_media_url_from_tweets("@NatGeoPhotos")
+        twitter_account = input('Please enter the Twitter Account:(ex:@NatGeoPhotos)')
+        media_files = get_media_url_from_tweets(twitter_account)
     except:
         print('\nTwitter API auth failed, please check your credentials.')
     time.sleep(1)
