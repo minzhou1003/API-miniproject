@@ -53,10 +53,17 @@ def detect_image_labels(directory_in_str):
     client = vision.ImageAnnotatorClient()
 
     pathlist = Path(directory_in_str).glob('**/*.jpg')
-    for path in pathlist:
-        # because path is object not string
-        path_in_str = str(path)
 
+    image_labels = []
+
+    paths = []
+    for path in pathlist:
+        path_in_str = str(path)
+        paths.append(path_in_str)
+    # sort the paths by the filename index to match the database
+    paths = sorted(paths, key = lambda x: int(x.split("/")[-1].split(".")[0][-3:]))
+
+    for path in paths:
         with open(path, 'rb') as image_file:
             content = image_file.read()
 
@@ -68,9 +75,12 @@ def detect_image_labels(directory_in_str):
         description = labels[0].description
 
         message = f'Highest score: {score:.2}, Description: {description}'
+        image_labels.append((score, description))
         print(message)
-        add_label_to_image(path_in_str, message)
+        add_label_to_image(path, message)
+
     print('\nFinished analysis!')
+    return image_labels
 
 def add_label_to_image(path, message):
     image = Image.open(path)
