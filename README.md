@@ -15,10 +15,10 @@ Test output of database:
 $ python mysql.py 
 Please enter the Twitter Account:(ex:@NatGeoPhotos) @NatGeoPhotos
 Enter the number of images to download: 5
-Enter consumer key: DS589sUjOysgugutfAdgr4ZaU
-Enter consumer secret: dusKKsCMjrKNOSjvadkjvAMBjrOemvgawj4HvI1gG3WZxztomB
-Enter access key: 913622162338086912-N48uu7MhBgSZXY7jv3yQ2D9MsYtnfCi
-Enter access secret: xHoT7ywBTBfhRdC8bwXlXfhlW4MxWgbCCYzWMWwtzBBJ3
+Enter consumer key: **********************
+Enter consumer secret: *****************************************
+Enter access key: *****************************************
+Enter access secret: *****************************************
 100% [........................................................] 202437 / 202437
 Successfully downloaded image001.jpg
 100% [........................................................] 246119 / 246119
