@@ -5,20 +5,22 @@ Author: Min Zhou
 
 Email: minzhou@bu.edu
 
-# MySQL database
-To test the database, follow the Installation step 1 to 4, and run:
+## MySQL database
+To test the MySQL database:
+1. Follow the Installation steps 1 to 4.
+2. Run:
 ```
 python mysql.py
 ```
-Test output of database:
+Test output:
 ```
 $ python mysql.py 
 Please enter the Twitter Account:(ex:@NatGeoPhotos) @NatGeoPhotos
 Enter the number of images to download: 5
-Enter consumer key: DS589sUjOysgugutfAdgr4ZaU
-Enter consumer secret: dusKKsCMjrKNOSjvadkjvAMBjrOemvgawj4HvI1gG3WZxztomB
-Enter access key: 913622162338086912-N48uu7MhBgSZXY7jv3yQ2D9MsYtnfCi
-Enter access secret: xHoT7ywBTBfhRdC8bwXlXfhlW4MxWgbCCYzWMWwtzBBJ3
+Enter consumer key: **********************
+Enter consumer secret: *****************************************
+Enter access key: *****************************************
+Enter access secret: *****************************************
 100% [........................................................] 202437 / 202437
 Successfully downloaded image001.jpg
 100% [........................................................] 246119 / 246119
@@ -57,6 +59,65 @@ Database successfully saved as twitter.db
 twitter.db
 
 ![twitter.db](mysql_example.png)
+
+
+## MongoDB database
+To test the MySQL database:
+1. Follow the Installation steps 1 to 4.
+2. [Install MongoDB](https://treehouse.github.io/installation-guides/mac/mongo-mac.html)
+3. Start the Mongo daemon in the above link.
+4. Run:
+```
+python mongodb.py 
+```
+Test output:
+```
+$ python mongodb.py 
+Please enter the Twitter Account:(ex:@NatGeoPhotos) @NatGeoPhotos
+Enter the number of images to download: 5
+Enter consumer key: **********************
+Enter consumer secret: *****************************************
+Enter access key: *****************************************
+Enter access secret: *****************************************
+100% [..........................................................] 68118 / 68118
+Successfully downloaded image001.jpg
+100% [..........................................................] 51306 / 51306
+Successfully downloaded image002.jpg
+100% [........................................................] 113673 / 113673
+Successfully downloaded image003.jpg
+100% [........................................................] 127599 / 127599
+Successfully downloaded image004.jpg
+100% [..........................................................] 88049 / 88049
+Successfully downloaded image005.jpg
+
+Image label detection using Google vision API:
+Highest score: 0.96, Description: wildlife
+Highest score: 0.95, Description: types of volcanic eruptions
+Highest score: 0.97, Description: flower
+Highest score: 0.96, Description: water
+Highest score: 0.98, Description: reflection
+
+Finished analysis!
+
+Converting to video...
+
+Video successfully saved as result.mp4.
+
+Video label analysis using Google vision API:
+
+Processing video for label annotations:
+Video label description: nature
+	Confidence: 0.8834792375564575
+
+
+One post: 5c030844db0812876994cbc5
+
+MongoDB posts created!
+
+Retrieving the post with account is @NatGeoPhotos:
+
+{'_id': ObjectId('5c030650db081286991de11a'), 'unix': 1543702059.1228101, 'datestamp': '2018-12-01 17: 07 39', 'account': '@NatGeoPhotos', 'total_images': 5, 'image_url': ['http://pbs.twimg.com/media/DtBkGX3W0AAwLq9.jpg', 'http://pbs.twimg.com/media/DrakVlpX4AABGk5.jpg', 'http://pbs.twimg.com/media/DpE-UNrWsAEdWTa.jpg', 'http://pbs.twimg.com/media/Ds96lUnWoAAbGr7.jpg', 'http://pbs.twimg.com/media/Dr6N5y6XcAcXMto.jpg'], 'image_label': [[0.9284822940826416, 'wildlife'], [0.9838229417800903, 'wildlife'], [0.7811179161071777, 'rock'], [0.9260057806968689, 'mammal'], [0.9668043255805969, 'beak']]}
+```
 
 ## Description:
 This a python library that downloads images from a twitter feed, convert them to a video and describe the content of the images in the video, and it also can output the label of the video.
