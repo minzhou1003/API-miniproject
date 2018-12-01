@@ -65,7 +65,6 @@ def get_media_url_from_tweets(screen_name) -> set:
         media = status.entities.get('media', [])
         if(len(media) > 0):
             media_files.add(media[0]['media_url'])
-    print(f'\nThe number of media urls: {len(media_files)}')
     return media_files
 
 
