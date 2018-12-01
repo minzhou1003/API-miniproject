@@ -7,4 +7,4 @@ pathlib
 pillow
 google
 google-cloud-storage
-
+pymongo==3.4.0
