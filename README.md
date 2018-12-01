@@ -5,6 +5,59 @@ Author: Min Zhou
 
 Email: minzhou@bu.edu
 
+# MySQL database
+To test the database, follow the Installation step 1 to 4, and run:
+```
+python mysql.py
+```
+Test output of database:
+```
+$ python mysql.py 
+Please enter the Twitter Account:(ex:@NatGeoPhotos) @NatGeoPhotos
+Enter the number of images to download: 5
+Enter consumer key: DS589sUjOysgugutfAdgr4ZaU
+Enter consumer secret: dusKKsCMjrKNOSjvadkjvAMBjrOemvgawj4HvI1gG3WZxztomB
+Enter access key: 913622162338086912-N48uu7MhBgSZXY7jv3yQ2D9MsYtnfCi
+Enter access secret: xHoT7ywBTBfhRdC8bwXlXfhlW4MxWgbCCYzWMWwtzBBJ3
+100% [........................................................] 202437 / 202437
+Successfully downloaded image001.jpg
+100% [........................................................] 246119 / 246119
+Successfully downloaded image002.jpg
+100% [........................................................] 125915 / 125915
+Successfully downloaded image003.jpg
+100% [..........................................................] 85453 / 85453
+Successfully downloaded image004.jpg
+100% [........................................................] 298524 / 298524
+Successfully downloaded image005.jpg
+
+Image label detection using Google vision API:
+Highest score: 0.66, Description: metropolis
+Highest score: 0.94, Description: wildlife
+Highest score: 0.93, Description: wildlife
+Highest score: 0.9, Description: iceberg
+Highest score: 0.78, Description: rock
+
+Finished analysis!
+
+Video successfully saved as result.mp4.
+
+Video label analysis using Google vision API:
+
+Processing video for label annotations:
+Video label description: animal
+	Confidence: 0.5281925201416016
+
+
+Video label description: nature
+	Confidence: 0.6764513850212097
+
+
+Database successfully saved as twitter.db
+```
+twitter.db
+
+![twitter.db](mysql_example.png)
+
 ## Description:
 This a python library that downloads images from a twitter feed, convert them to a video and describe the content of the images in the video, and it also can output the label of the video.
 
@@ -76,6 +129,7 @@ _Note: the "Highest score" is the most confident label predicted by Google Visio
 
 ## Sprint 4:
 - [x] Implement the Vision module
+
 
 ## Test:
 - [x] Test the FFMPEG module
